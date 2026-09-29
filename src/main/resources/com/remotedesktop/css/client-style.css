@@ -1,0 +1,276 @@
+/*
+ * VKU Remote Desktop - Client Style
+ * Giao diện tối hiện đại, đồng bộ với Server
+ */
+
+/* === Root === */
+.root-pane {
+    -fx-background-color: linear-gradient(to bottom, #1a1a2e, #16213e);
+}
+
+/* === Header === */
+.header-box {
+    -fx-background-color: linear-gradient(to right, #0f3460, #1a1a5e);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0, 0, 4);
+}
+
+.title-label {
+    -fx-text-fill: #e94560;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+}
+
+.subtitle-label {
+    -fx-text-fill: #a8b2d1;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 0 0 0 15;
+}
+
+/* === Status === */
+.status-label {
+    -fx-text-fill: #ccd6f6;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+}
+
+.status-dot-online {
+    -fx-fill: #00e676;
+    -fx-effect: dropshadow(gaussian, #00e676, 12, 0.6, 0, 0);
+}
+
+.status-dot-offline {
+    -fx-fill: #ff5252;
+    -fx-effect: dropshadow(gaussian, #ff5252, 8, 0.4, 0, 0);
+}
+
+/* === Connection Bar === */
+.connection-bar {
+    -fx-background-color: rgba(15, 52, 96, 0.6);
+    -fx-border-color: #233554;
+    -fx-border-width: 0 0 1 0;
+}
+
+.control-label {
+    -fx-text-fill: #a8b2d1;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+}
+
+.control-field {
+    -fx-background-color: #0a192f;
+    -fx-text-fill: #ccd6f6;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 13px;
+    -fx-border-color: #233554;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 6 10;
+    -fx-prompt-text-fill: #4a5568;
+    -fx-focus-color: #e94560;
+    -fx-faint-focus-color: transparent;
+}
+
+.control-field:focused {
+    -fx-border-color: #e94560;
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.3), 8, 0, 0, 0);
+}
+
+.control-spinner {
+    -fx-background-color: #233554;
+    -fx-border-color: #2d4a7a;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.control-spinner .text-field {
+    -fx-background-color: #0a192f;
+    -fx-text-fill: #ccd6f6;
+    -fx-font-family: "Consolas";
+    -fx-background-radius: 5 0 0 5;
+}
+
+.control-spinner .increment-arrow-button,
+.control-spinner .decrement-arrow-button {
+    -fx-background-color: #233554;
+    -fx-border-color: #2d4a7a;
+}
+
+.control-spinner .increment-arrow-button .increment-arrow,
+.control-spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: #ccd6f6;
+}
+
+/* === Buttons === */
+.btn-connect {
+    -fx-background-color: linear-gradient(to bottom, #2196f3, #1976d2);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 7 22;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(33,150,243,0.3), 8, 0, 0, 2);
+}
+
+.btn-connect:hover {
+    -fx-background-color: linear-gradient(to bottom, #42a5f5, #2196f3);
+    -fx-effect: dropshadow(gaussian, rgba(33,150,243,0.5), 12, 0, 0, 3);
+}
+
+.btn-connect:pressed {
+    -fx-background-color: linear-gradient(to bottom, #1565c0, #0d47a1);
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+}
+
+.btn-disconnect {
+    -fx-background-color: linear-gradient(to bottom, #ff5252, #d32f2f);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 7 22;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,82,82,0.3), 8, 0, 0, 2);
+}
+
+.btn-disconnect:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff6e6e, #ff5252);
+    -fx-effect: dropshadow(gaussian, rgba(255,82,82,0.5), 12, 0, 0, 3);
+}
+
+.btn-disconnect:pressed {
+    -fx-background-color: linear-gradient(to bottom, #c62828, #b71c1c);
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+}
+
+.btn-toggle {
+    -fx-background-color: linear-gradient(to bottom, #7c4dff, #651fff);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 7 15;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-toggle:selected {
+    -fx-background-color: linear-gradient(to bottom, #00e676, #00c853);
+    -fx-text-fill: white;
+}
+
+.btn-toggle:hover {
+    -fx-effect: dropshadow(gaussian, rgba(124,77,255,0.4), 10, 0, 0, 2);
+}
+
+.btn-connect:disabled,
+.btn-disconnect:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* === Canvas Container === */
+.canvas-container {
+    -fx-background-color: #0a0a14;
+    -fx-border-color: #233554;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 2);
+}
+
+/* === Log Panel === */
+.log-panel {
+    -fx-background-color: #16213e;
+}
+
+.section-label {
+    -fx-text-fill: #e94560;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+}
+
+.log-area {
+    -fx-control-inner-background: #0a192f;
+    -fx-text-fill: #64ffda;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 11px;
+    -fx-border-color: #233554;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-focus-color: #e94560;
+    -fx-faint-focus-color: transparent;
+}
+
+.log-area .content {
+    -fx-background-color: #0a192f;
+}
+
+/* === Bottom Bar === */
+.bottom-bar {
+    -fx-background-color: #0f1a2e;
+    -fx-border-color: #233554;
+    -fx-border-width: 1 0 0 0;
+}
+
+.footer-label {
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI";
+}
+
+/* === SplitPane === */
+.split-pane {
+    -fx-background-color: #16213e;
+    -fx-padding: 0;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #233554;
+    -fx-padding: 0 0 0 0;
+}
+
+/* === ScrollBar === */
+.scroll-bar {
+    -fx-background-color: #0a192f;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #233554;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #2d4a7a;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* === Tooltip === */
+.tooltip {
+    -fx-background-color: #233554;
+    -fx-text-fill: #ccd6f6;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+    -fx-background-radius: 4;
+    -fx-border-color: #2d4a7a;
+    -fx-border-radius: 4;
+}

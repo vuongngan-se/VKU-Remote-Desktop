@@ -1,0 +1,11 @@
+com\remotedesktop\client\ClientLauncher.class
+com\remotedesktop\client\ClientApp$1.class
+com\remotedesktop\client\RemoteDesktopClient.class
+com\remotedesktop\common\ProtocolConstants.class
+com\remotedesktop\server\ServerLauncher.class
+com\remotedesktop\server\RemoteDesktopServer.class
+com\remotedesktop\client\ClientApp.class
+module-info.class
+com\remotedesktop\common\ScreenCaptureUtils.class
+com\remotedesktop\common\NetworkUtils.class
+com\remotedesktop\server\ServerApp.class

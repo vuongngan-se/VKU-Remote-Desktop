@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<!--
+    FXML cho Client - có thể dùng thay cho Java code.
+    Sử dụng: FXMLLoader.load(getClass().getResource("/com/remotedesktop/fxml/client-view.fxml"))
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml" styleClass="root-pane"
+            prefWidth="1050" prefHeight="720">
+
+    <top>
+        <VBox>
+            <!-- Header -->
+            <HBox spacing="10" styleClass="header-box" alignment="CENTER_LEFT">
+                <padding><Insets top="18" right="25" bottom="15" left="25"/></padding>
+                <Label text="VKU Remote Desktop" styleClass="title-label"/>
+                <Label text="Client - Điều khiển từ xa" styleClass="subtitle-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Circle fx:id="statusDot" radius="6" styleClass="status-dot-offline"/>
+                <Label fx:id="statusLabel" text="Chưa kết nối" styleClass="status-label"/>
+            </HBox>
+
+            <!-- Connection Bar -->
+            <HBox spacing="12" styleClass="connection-bar" alignment="CENTER_LEFT">
+                <padding><Insets top="12" right="25" bottom="12" left="25"/></padding>
+                <Label text="Địa chỉ IP:" styleClass="control-label"/>
+                <TextField fx:id="hostField" text="127.0.0.1" prefWidth="180"
+                           styleClass="control-field" promptText="Nhập địa chỉ IP server"/>
+                <Label text="Cổng:" styleClass="control-label"/>
+                <Spinner fx:id="portSpinner" prefWidth="100" styleClass="control-spinner"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="controlToggle" text="Điều khiển: BẬT"
+                              selected="true" styleClass="btn-toggle"/>
+                <Button fx:id="connectButton" text="Kết nối" styleClass="btn-connect"/>
+                <Button fx:id="disconnectButton" text="Ngắt" styleClass="btn-disconnect" disable="true"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Remote Canvas + Log -->
+    <center>
+        <SplitPane orientation="VERTICAL" dividerPositions="0.75">
+            <StackPane styleClass="canvas-container">
+                <padding><Insets topRightBottomLeft="5"/></padding>
+                <Canvas fx:id="remoteCanvas" width="960" height="540"/>
+            </StackPane>
+            <VBox spacing="8" styleClass="log-panel">
+                <padding><Insets topRightBottomLeft="10"/></padding>
+                <Label text="Nhật ký" styleClass="section-label"/>
+                <TextArea fx:id="logArea" editable="false" wrapText="true"
+                          styleClass="log-area" prefHeight="150" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </SplitPane>
+    </center>
+
+    <!-- Bottom: Footer -->
+    <bottom>
+        <HBox spacing="15" styleClass="bottom-bar" alignment="CENTER_LEFT">
+            <padding><Insets top="8" right="25" bottom="8" left="25"/></padding>
+            <Label text="VKU Remote Desktop v1.0 - Đề 12 Lập trình mạng" styleClass="footer-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="JavaFX 17 + TCP/IP" styleClass="footer-label"/>
+        </HBox>
+    </bottom>
+</BorderPane>

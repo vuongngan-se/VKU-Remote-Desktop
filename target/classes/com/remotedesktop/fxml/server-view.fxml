@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.geometry.Insets?>
+
+<!--
+    FXML cho Server - có thể dùng thay cho Java code.
+    Sử dụng: FXMLLoader.load(getClass().getResource("/com/remotedesktop/fxml/server-view.fxml"))
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml" styleClass="root-pane"
+            prefWidth="650" prefHeight="580">
+
+    <!-- Header -->
+    <top>
+        <VBox styleClass="header-box" spacing="8">
+            <padding><Insets top="25" right="30" bottom="20" left="30"/></padding>
+            <Label text="VKU Remote Desktop" styleClass="title-label"/>
+            <Label text="Server - Máy bị điều khiển" styleClass="subtitle-label"/>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <padding><Insets top="10"/></padding>
+                <Circle fx:id="statusDot" radius="6" styleClass="status-dot-offline"/>
+                <Label fx:id="statusLabel" text="Chưa khởi động" styleClass="status-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="ipLabel" text="IP: ---" styleClass="info-label"/>
+                <Label fx:id="portLabel" text="Port: ---" styleClass="info-label"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center: Log -->
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="15" right="30" bottom="15" left="30"/></padding>
+            <Label text="Nhật ký hoạt động" styleClass="section-label"/>
+            <TextArea fx:id="logArea" editable="false" wrapText="true"
+                      styleClass="log-area" prefHeight="280" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Controls -->
+    <bottom>
+        <HBox spacing="15" styleClass="bottom-box" alignment="CENTER">
+            <padding><Insets top="18" right="30" bottom="22" left="30"/></padding>
+            <Label text="Cổng:" styleClass="control-label"/>
+            <Spinner fx:id="portSpinner" prefWidth="100" styleClass="control-spinner"/>
+            <Label text="Chất lượng:" styleClass="control-label"/>
+            <ComboBox fx:id="qualityCombo" styleClass="control-combo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="startButton" text="Khởi động" styleClass="btn-start"/>
+            <Button fx:id="stopButton" text="Dừng" styleClass="btn-stop" disable="true"/>
+        </HBox>
+    </bottom>
+</BorderPane>
